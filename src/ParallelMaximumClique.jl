@@ -2,7 +2,7 @@ module ParallelMaximumClique
 
 
 using Graphs, SparseArrays, LinearAlgebra
-using LibPMC_jll
+using PMC_jll
 
 include("utils.jl")
 include("wrapper.jl")

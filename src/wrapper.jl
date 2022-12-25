@@ -1,6 +1,6 @@
 
 """
-  maximum_clique(g::G; kwargs...) where {T, G<:AbstractGraph{T}}
+    maximum_clique(g::G; kwargs...) where {T, G<:AbstractGraph{T}}
 
 returns a Vector{Int32} of the nodes of g that are in the maximum clique in g
 
@@ -18,7 +18,7 @@ end
 
 
 """
-  maximum_clique(A::SparseMatrix; normalize=true, kwargs...)
+    maximum_clique(A::SparseMatrixCSC; normalize=true, kwargs...)
 
 
 returns a Vector{Int32} of the nodes in the maximum clique of g, where A is the adjacency matrix of g. 
@@ -49,7 +49,11 @@ function maximum_clique(A::SparseMatrixCSC; normalize=true, kwargs...)
 end
 
 """
-  int K = maximum_clique!(ouput::Vector{Int32}, ei::Vector{Int32}, ej::Vector{Int32}; verbose=0; algorithm=0; time_limit_secs=3600.0; remove_time_secs=4.0)
+    int K = maximum_clique!(ouput::Vector{Int32}, ei::Vector{Int32}, ej::Vector{Int32}; 
+        verbose=0; 
+        algorithm=0; 
+        time_limit_secs=3600.0;
+        remove_time_secs=4.0)
 
 Inputs:
  - `ei`: the vector of edge sources
@@ -66,7 +70,7 @@ Parameters:
  - `remove_time_secs`: maximum time before the graph gets reduced.
 
 Notes:
- - for an edge to be valid, ei[k] > ej[k] for all k.
+ - for an edge to be valid, `ei[k] > ej[k]` for all `k`.
  - only the first `K` elements of `output` are modified.
 
 """
