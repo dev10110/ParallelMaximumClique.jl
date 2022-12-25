@@ -1,7 +1,13 @@
 name = "ParallelMaximumClique"
 uuid = "2ead3118-b729-4a15-8a49-daec07ff5988"
 authors = ["Devansh Ramgopal Agrawal <devansh@umich.edu> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
+
+[deps]
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+LibPMC_jll = "4f795694-8728-56d9-86d2-4d5cb32dbd12"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [compat]
 julia = "1.7"

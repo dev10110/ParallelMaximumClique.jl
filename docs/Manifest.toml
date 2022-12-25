@@ -60,11 +60,6 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 [[deps.NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
-[[deps.ParallelMaximumClique]]
-path = ".."
-uuid = "2ead3118-b729-4a15-8a49-daec07ff5988"
-version = "0.1.0"
-
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
 git-tree-sha1 = "6466e524967496866901a78fca3f2e9ea445a559"
