@@ -17,7 +17,7 @@ Simply
 
 ## Usage
 
-Minimal Example:
+Minimal Example, using `Graphs.jl` interface
 ```
 using Graphs, ParallelMaximumClique
 
@@ -27,6 +27,19 @@ g = barabasi_albert(100, 25)
 # determine the nodes in the maximum clique
 clique = maximum_clique(g)
 ```
+
+Alternatively, provide a sparse adjacency matrix:
+```
+using ParallelMaximumClique, SparseArrays
+
+# construct the adjacency matrix
+A = adjacency_matrix(...)
+
+clique = maximum_clique(sparse(A))
+```
+
+There is a more low-level interfance described in the reference page. Optional arguments are also described there. 
+
 
 ## Licence/Citation
 All credit for this package goes to the original authors. I, Dev, have simply wrapped it into a Julia library.  As per the original terms and conditions:
