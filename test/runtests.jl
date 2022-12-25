@@ -26,24 +26,24 @@ end
 
     output = zeros(Int32, 3)
 
-    N = PMC.pmc_wrapper!(output, ej, ei)
+    N = maximum_clique!(output, ej, ei; verbose=0)
 
     @test N == 3
+
+    N = maximum_clique!(output, ej, ei; verbose=1)
 
 end
 
 
 
 
-@testset "max_clique(graph)" begin
+@testset "max_clique(complete graph)" begin
 
     g = complete_graph(5)
 
     expected_out = [1,2,3,4,5] |> sort
 
-    out = PMC.maximum_clique(g) |> sort
-
-    @show out
+    out = maximum_clique(g) |> sort
 
     @test out == expected_out
 
@@ -51,4 +51,19 @@ end
 
 
 
+
+@testset "max_clique(not complete graph)" begin
+
+    g = complete_graph(5)
+
+    rem_edge!(g, 4,5)
+    rem_edge!(g, 5,3)
+
+    expected_out = [1,2,3,4] |> sort
+
+    out = maximum_clique(g) |> sort
+
+    @test out == expected_out
+
+end
 
